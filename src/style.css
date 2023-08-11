@@ -1,0 +1,601 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Custom properties */
+:root {
+  --bg-primary-clr: rgba(16, 14, 29, 1);
+  --bg-secondary-clr: rgba(30, 33, 58, 1);
+  --font-primary-clr: rgba(231, 231, 235, 1);
+  --font-secondary-clr: rgba(110, 112, 122, 1);
+}
+
+/* General styles */
+.container {
+  margin: 0 auto;
+  width: 94%;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    width: 79%;
+  }
+}
+
+/* Root */
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 590px) {
+  #root {
+    flex-direction: row;
+  }
+}
+
+/* Loading, Error */
+.error-container,
+.loading-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(16, 14, 29, 1);
+}
+
+.error__message {
+  color: var(--font-primary-clr);
+}
+
+/* Layout */
+.layout-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media (min-width: 590px) {
+  .layout-container {
+    height: auto;
+    overflow: visible;
+    display: flex;
+  }
+}
+
+/* Header */
+.header {
+  background-color: rgba(30, 33, 58, 1);
+}
+
+.header__nav {
+  margin-top: 1.13em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__search-btn {
+  padding: 0.69em 1.13em;
+  color: var(--font-primary-clr);
+}
+
+.header__location-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__search-btn,
+.header__location-btn {
+  background-color: var(--font-secondary-clr);
+  border: none;
+  cursor: pointer;
+}
+
+.header__location-icon {
+  color: var(--font-primary-clr);
+}
+
+.header__img-container {
+  height: 326px;
+  margin-bottom: 9.75em;
+  position: relative;
+}
+
+.header__bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header__info {
+  text-align: center;
+  margin-bottom: 6.56em;
+}
+
+.header__temp {
+  position: absolute;
+  inset: 348px 0 0 0;
+}
+
+.header__value {
+  font-size: 9rem;
+  color: var(--font-primary-clr);
+}
+
+.header__unit {
+  font-size: 3rem;
+}
+
+.header__desc {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 1.33em;
+  text-transform: capitalize;
+}
+
+.header__unit,
+.header__desc {
+  color: rgba(160, 159, 177, 1);
+}
+
+.header__date {
+  font-size: 1.125rem;
+  color: rgba(136, 134, 157, 1);
+  margin-bottom: 1.77em;
+}
+
+.header__day,
+.header__separator {
+  margin-right: 1em;
+}
+
+.header__location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: rgba(136, 134, 157, 1);
+}
+
+.header__location-icon--dark {
+  margin-right: 0.25em;
+}
+
+.header__location-name {
+  font-size: 1.125rem;
+}
+
+@media (min-width: 590px) {
+  .header {
+    flex-basis: 50%;
+    max-width: 495px;
+  }
+
+  .header__temp {
+    inset: 0;
+    top: 348px;
+    right: 50%;
+  }
+}
+
+@media (min-width: 750px) {
+  .header {
+    flex-basis: 40%;
+  }
+
+  .header__temp {
+    right: 60%;
+  }
+}
+
+@media (min-width: 1238px) {
+  .header {
+    flex-basis: 31%;
+  }
+
+  .header__temp {
+    right: 69%;
+  }
+}
+
+@media (min-width: 1597px) {
+  .header__temp {
+    right: calc(100% - 495px);
+  }
+}
+
+/* Search */
+.search {
+  background-color: var(--bg-secondary-clr);
+  height: 100vh;
+}
+
+.search__close-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.75em;
+}
+
+.search__close-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: transparent;
+  border: none;
+  color: var(--font-primary-clr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search__form {
+  margin: 1.5em 0 2.37em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search__location {
+  margin-right: 0.75em;
+  padding: 0.75em;
+  border: 1px solid var(--font-secondary-clr);
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.search__icon {
+  color: var(--font-secondary-clr);
+  margin-right: 0.81em;
+}
+
+.search__location-input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: var(--font-primary-clr);
+}
+
+.search__location-input::placeholder {
+  color: rgba(97, 100, 117, 1);
+}
+
+.search__location:hover,
+.search__location:focus {
+  border-color: var(--font-primary-clr);
+}
+
+.search__location-input:focus {
+  outline: none;
+}
+
+.search__btn {
+  padding: 0.87em 0.87em 0.94em 1.19em;
+  background-color: rgba(60, 71, 233, 1);
+  color: var(--font-primary-clr);
+  border: none;
+}
+
+.search-history__item-container {
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-history__item-container:hover {
+  border: 1px solid rgba(97, 100, 117, 1);
+}
+
+.search__btn,
+.search-history__item-container {
+  cursor: pointer;
+}
+
+.search-history__item {
+  color: var(--font-primary-clr);
+  padding: 1.44em 0 1.37em 0.75em;
+  text-transform: capitalize;
+}
+
+.search-history__arrow {
+  color: rgba(97, 100, 117, 1);
+  padding-right: 0.65em;
+  display: none;
+}
+
+.search-history__item-container:hover .search-history__arrow {
+  display: block;
+}
+
+@media (min-width: 590px) {
+  .search {
+    flex-basis: 50%;
+    max-width: 495px;
+    height: auto;
+  }
+}
+
+@media (min-width: 750px) {
+  .search {
+    flex-basis: 40%;
+  }
+}
+
+@media (min-width: 1238px) {
+  .search {
+    flex-basis: 31%;
+  }
+}
+
+/* Main */
+.main {
+  background-color: var(--bg-primary-clr);
+}
+
+.main__unit-settings-container {
+  display: none;
+}
+
+.main__deg-celsius-btn {
+  margin-right: 0.75em;
+}
+
+.main__deg-celsius-btn,
+.main__fahrenheit-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgba(88, 86, 118, 1);
+  color: var(--font-primary-clr);
+  font-size: 1.125rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.weather-forecast__container {
+  color: var(--font-primary-clr);
+  padding: 3.25em 0 3.18em 0;
+  margin: 0 auto;
+  width: 70%;
+  max-width: 330px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 26px;
+}
+
+.weather-forecast__item {
+  background-color: var(--bg-secondary-clr);
+  height: 177px;
+  padding: 1.125em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather-forecast__max-temp {
+  margin-right: 1em;
+}
+
+.weather-forecast__min-temp {
+  color: rgba(160, 159, 177, 1);
+}
+
+.highlights__container {
+  margin: 0 auto;
+  width: 88%;
+  max-width: 363px;
+  color: var(--font-primary-clr);
+  padding-bottom: 8.56em;
+}
+
+.highlights__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.14em;
+}
+
+.highlights__item-container {
+  height: 204px;
+  background-color: var(--bg-secondary-clr);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.highlights__item-title {
+  margin-bottom: 0.375em;
+}
+
+.highlights__value {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.highlights__unit {
+  font-size: 2rem;
+}
+
+.highlights__wind-direction-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.12em;
+}
+
+.highlights__icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-right: 0.6em;
+  width: 29.4px;
+  height: 29.4px;
+  border-radius: 14.7px;  
+}
+
+.highlights__icon {
+  font-size: 17.6px;
+  transform: rotate(-22.5deg);
+}
+
+.highlights__wind-direction {
+  font-size: 0.875rem;
+}
+
+.highlights__unit--humidity {
+  font-weight: 400;
+}
+
+.highlights__humidity-display {
+  width: 70%;
+  margin-top: 0.75em;
+}
+
+.highlights__humidity-marker {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.125em;
+}
+
+.highlights__humidity-display-bar {
+  height: 8px;
+  background-color: var(--font-primary-clr);
+  border-radius: 4px;
+}
+
+.highlights__humidity-unit {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(160, 159, 177, 1);
+  display: flex;
+  justify-content: end;
+}
+
+.highlights__item-container--visibility {
+  height: 159px;
+}
+
+.highlights__item-container--air-pressure {
+  height: 160px;
+}
+
+@media (min-width: 590px) {
+  .main {
+    flex: 1;
+  }
+
+  .weather-forecast__container {
+    padding: 66px 0 72px 0;
+    grid-template-columns: 1fr;
+    max-width: 170px;
+  }
+
+  .highlights__container {
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 750px) {
+  .main__unit-settings-container {
+    margin: 0 auto;
+    padding-top: 2.625em;
+    display: flex;
+    justify-content: end;
+  }
+
+  .weather-forecast__container {
+    grid-template-columns: 1fr 1fr;
+    max-width: 366px;
+  }
+
+  .main__unit-settings-container,
+  .highlights__container {
+    width: 70%;
+  }
+
+  .main__unit-settings-container,
+  .weather-forecast__container,
+  .highlights__container {
+    max-width: 366px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .weather-forecast__container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .main__unit-settings-container,
+  .weather-forecast__container,
+  .highlights__container {
+    max-width: 562px;
+  }
+}
+
+@media (min-width: 1250px) {
+  .highlights__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px 234px 141px;
+    column-gap: 30px;
+  }
+
+  .highlights__title {
+    grid-column: 1 / span 2;
+  }
+}
+ 
+@media (min-width: 1400px) {
+  .weather-forecast__container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .highlights__container {
+    grid-template-rows: 60px 252px 159px;
+  }
+
+  .main__unit-settings-container,
+  .weather-forecast__container,
+  .highlights__container {
+    max-width: 954px;
+  }
+}
+
+
+
+
+
+
+
+
+

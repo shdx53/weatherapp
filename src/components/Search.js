@@ -54,6 +54,7 @@ export default function Search({ setLocationData, toggleSearchDisplay }) {
       if (ref.current) {
         return ref.current.contains(event.target)
       }
+      return false
     })
     const targetInForm = formRef.current.contains(event.target)
     if ((targetInForm || targetInHistoryRefs) && !isFocus.form) {

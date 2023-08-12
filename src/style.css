@@ -40,6 +40,13 @@ body {
   }
 }
 
+@media (min-width: 1050px) {
+  #root {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
 /* Loading, Error */
 .error-container,
 .loading-container {

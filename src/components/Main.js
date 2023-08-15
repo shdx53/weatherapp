@@ -1,7 +1,6 @@
 import React from "react"
 import { getWeatherImg } from "./Header"
 import { formatDate } from "./Header"
-import { nanoid } from "nanoid"
 
 export default function Main({
   currentWeatherData,
@@ -113,7 +112,7 @@ export default function Main({
         tempUnit = "°F"
       }
       return (
-        <article key={nanoid()} className="weather-forecast__item">
+        <article key={formattedDate} className="weather-forecast__item">
           <div className="weather-forecast__date">{formattedDate}</div>
           <img
             src={img}
